@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<h1>Edit Question</h1>
+
+<ul>
+	<li>
+		<a href="/">Questions</a>
+		<a href="/questions">Questions API</a>
+		<a href="/new">Add a new question to the question list</a>
+	</li>
+</ul>
+
+<form method="POST" action="">
+	<input type="text" name="question" placeholder="what's your question">
+
+	<button>submit</button>
+</form>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	var id = window.location.href.split('/edit/')[1];
+
+	$.ajax({
+		url: '/questions/' + id,
+		method: 'GET'
+	}).then(function(data){
+
+		$('input').val(data.question);
+
+		$('form').attr('action', '/update/' + id + '?_method=PUT');
+
+		console.log(data);
+	});
+</script>
+</body>
+</html>

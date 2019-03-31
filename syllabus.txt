@@ -1,0 +1,21 @@
+1. students will include JavaScript and CSS files in their express application using the public folder
+
+2. students will make $.ajax queries to get and post routes
+
+3. students will combine MySQL in their express code
+
+    in front end js
+        you can't write or read from files
+
+        you can't connect to MySQL
+
+        A. students will make an app that shows all the records
+        from a table and allows users to delete the record from the 
+        front end.
+
+        B. students will use method over ride to make PUT and DELETE requests
+
+        C. students will separate routes into separate files
+
+        D. students will use templating to mix html and JavaScript objects
+        together
